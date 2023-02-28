@@ -2,7 +2,7 @@ package runner;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-import pages.start.StartPage;
+//import pages.start.StartPage;
 
 public abstract class BaseTest {
 
@@ -23,20 +23,20 @@ public abstract class BaseTest {
     protected WebDriver getDriver() {
         return driver;
     }
-
-    public StartPage openBaseURL() {
-        getDriver().get(BASE_URL);
-
-        return new StartPage(getDriver());
-    }
-
-    public String getExternalPageTitle() {
-
-        return getDriver().getTitle();
-    }
-
-    public String getExternalPageURL() {
-
-        return getDriver().getCurrentUrl();
-    }
+//
+//    public StartPage openBaseURL() {
+//        getDriver().get(BASE_URL);
+//
+//        return new StartPage(getDriver());
+//    }
+//
+//    public String getExternalPageTitle() {
+//
+//        return getDriver().getTitle();
+//    }
+//
+//    public String getExternalPageURL() {
+//
+//        return getDriver().getCurrentUrl();
+//    }
 }
