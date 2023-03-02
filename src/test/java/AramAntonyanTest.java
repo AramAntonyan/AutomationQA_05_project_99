@@ -53,10 +53,21 @@ public class AramAntonyanTest extends BaseTest {
         String expectedResult = "99 Bottles of Beer | Start";
 
         getDriver().get(BASE_URL);
-        String actualResult =  getDriver().getTitle();
+        String actualResult = getDriver().getTitle();
 
         Assert.assertEquals(actualResult, expectedResult);
 
 
+    }
+
+    @Test
+    public void testBaseUrlIsCorrect_HappyPath() {
+        final String BASE_URL = "https://www.99-bottles-of-beer.net/";
+        String expectedResult = "https://www.99-bottles-of-beer.net/";
+
+        getDriver().get(BASE_URL);
+        String actualResult = getDriver().getCurrentUrl();
+
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }
