@@ -1,3 +1,4 @@
+import com.sun.source.tree.PackageTree;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -67,6 +68,25 @@ public class AramAntonyanTest extends BaseTest {
 
         getDriver().get(BASE_URL);
         String actualResult = getDriver().getCurrentUrl();
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testTeamPageName_HappyPath() {
+        final String BASEURL = "https://www.99-bottles-of-beer.net/";
+        String expectedResult = "The Team";
+
+        getDriver().get(BASEURL);
+        WebElement teamButton = getDriver().findElement(
+                By.xpath("//ul[@id='submenu']//li//a[@href='team.html']")
+        );
+
+        teamButton.click();
+
+        String actualResult = getDriver().findElement(
+                By.xpath("//div[@id='main']/h2[text()='The Team']")
+        ).getText();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
