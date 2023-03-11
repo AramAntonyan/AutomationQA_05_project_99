@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
@@ -122,6 +123,7 @@ public class AramAntonyanTest extends BaseTest {
         String expectedResult = "https://www.99-bottles-of-beer.net/";
 
         openBaseUrl(getDriver());
+        Reporter.log("Base URL opened", true);
         String actualResult = getDriver().getCurrentUrl();
 
         Assert.assertEquals(actualResult, expectedResult);
