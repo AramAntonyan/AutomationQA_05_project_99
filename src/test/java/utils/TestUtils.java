@@ -1,4 +1,4 @@
-package runner;
+package utils;
 
 import org.apache.commons.lang3.RandomStringUtils;
 

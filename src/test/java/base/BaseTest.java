@@ -1,10 +1,11 @@
-package runner;
+package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
+import utils.ReportUtils;
 
 import java.lang.reflect.Method;
 //import pages.start.StartPage;
@@ -22,7 +23,6 @@ public abstract class BaseTest {
         Reporter.log(ReportUtils.getReportHeader(), true);
     }
 
-    private final String BASE_URL = "http://www.99-bottles-of-beer.net";
 
     @BeforeMethod
     protected void beforeMethod(Method method, ITestResult result) {
